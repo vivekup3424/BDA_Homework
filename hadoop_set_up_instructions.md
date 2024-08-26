@@ -185,4 +185,26 @@ cd hadoop-3.4.0/etc/hadoop
 mkdir -p /home/hadoop/hdfs/namenode
 mkdir -p /home/hadoop/hdfs/datanode
 ```
+- setup java path file
+`vim hadoop-env.sh`
 
+```bash
+
+# The java implementation to use. By default, this environment
+# variable is REQUIRED on ALL platforms except OS X!
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+```
+- format the file system(one time thingy)
+`./hdfs namenode -format`
+
+- startup test
+```bash
+cd ..
+cd sbin
+./start-dfs.sh
+firefox localhost:9870
+./stop-all.sh
+```
+
+- after this go see the instructions for setting up yarn on the sytem
+since the hadoop setup part is done
