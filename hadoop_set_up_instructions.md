@@ -158,4 +158,31 @@ cd hadoop-3.4.0/etc/hadoop
 </configuration>
 ```
 
+`vim hdfs-site.xml`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+        <property>
+                <name>dfs.replication</name>
+                <value>1</value>
+        </property>
+        <property>
+                <name>dfs.namenode.name.dir</name>
+                <value>/home/hadoop/hdfs/namenode/</value>
+        </property>
+        <property>
+                <name>dfs.datanode.name.dir</name>
+                <value>/home/hadoop/hdfs/datanode/</value>
+        </property>
+ </configuration>
+```
+
+- create the directories for datanode and namenode
+```bash
+mkdir -p /home/hadoop/hdfs/namenode
+mkdir -p /home/hadoop/hdfs/datanode
+```
 
