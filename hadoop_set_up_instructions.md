@@ -144,7 +144,18 @@ To enable passwordless SSH login for the Hadoop user, you need to generate an SS
 - Hadoop Single Node Setup configuation steps
 ```bash
 cd hadoop-3.4.0/etc/hadoop
+```
 
+`vim core-site.xml`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+        <property>
+                <name>fs.defaultFS</name>
+                <value>hdfs://localhost:9000</value>
+        </property>
+</configuration>
 ```
 
 
